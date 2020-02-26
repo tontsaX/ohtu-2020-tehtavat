@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ohtuesimerkki.StatisticsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-02-26T14:04:03" hostname="parrot" time="0.064">
+<testsuite name="ohtuesimerkki.StatisticsTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2020-02-26T15:46:10" hostname="parrot" time="0.071">
   <properties/>
-  <testcase name="konstruktoriLuoOikeanTilaston" classname="ohtuesimerkki.StatisticsTest" time="0.064"/>
+  <testcase name="pelaajaEiLoydyPalauttaaNull" classname="ohtuesimerkki.StatisticsTest" time="0.013"/>
+  <testcase name="teamPalauttaaOikeanJoukkueen" classname="ohtuesimerkki.StatisticsTest" time="0.05"/>
+  <testcase name="topPisteetJarjestysOikein" classname="ohtuesimerkki.StatisticsTest" time="0.002"/>
+  <testcase name="konstruktoriLuoOikeanTilaston" classname="ohtuesimerkki.StatisticsTest" time="0.002"/>
+  <testcase name="haePelaajaTuottaaOikeanTuloksen" classname="ohtuesimerkki.StatisticsTest" time="0.0"/>
+  <testcase name="asetaMaalit" classname="ohtuesimerkki.StatisticsTest" time="0.0"/>
+  <testcase name="asetaSyotot" classname="ohtuesimerkki.StatisticsTest" time="0.0"/>
+  <testcase name="asetaPelaajanNimi" classname="ohtuesimerkki.StatisticsTest" time="0.0"/>
+  <testcase name="asetaJoukkeenNimi" classname="ohtuesimerkki.StatisticsTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

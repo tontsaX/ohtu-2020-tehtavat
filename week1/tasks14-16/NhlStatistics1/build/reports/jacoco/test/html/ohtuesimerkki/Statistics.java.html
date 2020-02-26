@@ -16,13 +16,13 @@ public class Statistics {
 <span class="fc" id="L16">    }</span>
 
     public Player search(String name) {
-<span class="nc bnc" id="L19" title="All 2 branches missed.">        for (Player player : players) {</span>
-<span class="nc bnc" id="L20" title="All 2 branches missed.">            if (player.getName().contains(name)) {</span>
-<span class="nc" id="L21">                return player;</span>
+<span class="fc bfc" id="L19" title="All 2 branches covered.">        for (Player player : players) {</span>
+<span class="fc bfc" id="L20" title="All 2 branches covered.">            if (player.getName().contains(name)) {</span>
+<span class="fc" id="L21">                return player;</span>
             }
-<span class="nc" id="L23">        }</span>
+<span class="fc" id="L23">        }</span>
 
-<span class="nc" id="L25">        return null;</span>
+<span class="fc" id="L25">        return null;</span>
     }
     
     public List&lt;Player&gt; getPlayers() {
@@ -30,28 +30,28 @@ public class Statistics {
     }
 
     public List&lt;Player&gt; team(String teamName) {
-<span class="nc" id="L33">        ArrayList&lt;Player&gt; playersOfTeam = new ArrayList&lt;Player&gt;();</span>
+<span class="fc" id="L33">        ArrayList&lt;Player&gt; playersOfTeam = new ArrayList&lt;Player&gt;();</span>
         
-<span class="nc bnc" id="L35" title="All 2 branches missed.">        for (Player player : players) {</span>
-<span class="nc bnc" id="L36" title="All 2 branches missed.">            if ( player.getTeam().equals(teamName)) {</span>
-<span class="nc" id="L37">                playersOfTeam.add(player);</span>
+<span class="fc bfc" id="L35" title="All 2 branches covered.">        for (Player player : players) {</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">            if ( player.getTeam().equals(teamName)) {</span>
+<span class="fc" id="L37">                playersOfTeam.add(player);</span>
             }
-<span class="nc" id="L39">        }</span>
+<span class="fc" id="L39">        }</span>
         
-<span class="nc" id="L41">        return playersOfTeam;</span>
+<span class="fc" id="L41">        return playersOfTeam;</span>
     }
 
     public List&lt;Player&gt; topScorers(int howMany) {
-<span class="nc" id="L45">        Collections.sort(players);</span>
-<span class="nc" id="L46">        ArrayList&lt;Player&gt; topScorers = new ArrayList&lt;Player&gt;();</span>
-<span class="nc" id="L47">        Iterator&lt;Player&gt; playerIterator = players.iterator();</span>
+<span class="fc" id="L45">        Collections.sort(players);</span>
+<span class="fc" id="L46">        ArrayList&lt;Player&gt; topScorers = new ArrayList&lt;Player&gt;();</span>
+<span class="fc" id="L47">        Iterator&lt;Player&gt; playerIterator = players.iterator();</span>
         
-<span class="nc bnc" id="L49" title="All 2 branches missed.">        while (howMany&gt;=0) {</span>
-<span class="nc" id="L50">            topScorers.add( playerIterator.next() );            </span>
-<span class="nc" id="L51">            howMany--;</span>
+<span class="fc bfc" id="L49" title="All 2 branches covered.">        while (howMany&gt;=0) {</span>
+<span class="fc" id="L50">            topScorers.add( playerIterator.next() );            </span>
+<span class="fc" id="L51">            howMany--;</span>
         }
         
-<span class="nc" id="L54">        return topScorers;</span>
+<span class="fc" id="L54">        return topScorers;</span>
     }
 
 }
