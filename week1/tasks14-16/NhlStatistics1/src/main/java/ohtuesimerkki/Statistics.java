@@ -24,6 +24,10 @@ public class Statistics {
 
         return null;
     }
+    
+    public List<Player> getPlayers() {
+    	return this.players;
+    }
 
     public List<Player> team(String teamName) {
         ArrayList<Player> playersOfTeam = new ArrayList<Player>();

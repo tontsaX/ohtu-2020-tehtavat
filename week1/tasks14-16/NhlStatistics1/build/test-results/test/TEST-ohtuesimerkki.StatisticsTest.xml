@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ohtuesimerkki.StatisticsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-02-26T14:04:03" hostname="parrot" time="0.064">
+  <properties/>
+  <testcase name="konstruktoriLuoOikeanTilaston" classname="ohtuesimerkki.StatisticsTest" time="0.064"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

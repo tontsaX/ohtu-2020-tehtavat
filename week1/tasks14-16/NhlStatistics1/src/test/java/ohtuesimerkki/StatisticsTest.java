@@ -2,6 +2,8 @@ package ohtuesimerkki;
 
 import static org.junit.Assert.*;
 
+import static org.hamcrest.CoreMatchers.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,4 +34,8 @@ public class StatisticsTest {
         stats = new Statistics(readerStub);
     }  
 
+    @Test
+    public void konstruktoriLuoOikeanTilaston() {
+    	assertThat(stats.getPlayers().toString(), is(readerStub.getPlayers().toString()));
+    }
 }
