@@ -1,4 +1,8 @@
-package ohtuesimerkki;
+package main;
+
+import ohtuesimerkki.Player;
+import ohtuesimerkki.PlayerReader;
+import ohtuesimerkki.Statistics;
 
 public class Main {
     public static void main(String[] args) {
