@@ -1,20 +1,10 @@
 package ohtu.verkkokauppa;
 
 public class Viitegeneraattori implements IViitegen {
-
-    private static IViitegen instanssi;
-
-    public static IViitegen getInstance() {
-        if (instanssi == null) {
-            instanssi = new Viitegeneraattori();
-        }
-
-        return instanssi;
-    }
     
     private int seuraava;
     
-    private Viitegeneraattori(){
+    public Viitegeneraattori(){
         seuraava = 1;    
     }
     
