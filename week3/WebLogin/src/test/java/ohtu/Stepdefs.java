@@ -49,12 +49,15 @@ public class Stepdefs {
     	logInWith(username, password);
     }
     
+    @When("a nonexist username {string} and password {string} are given")
+    public void nonexistingUsernameAndPasswordAreGiven(String username, String password) {
+    	logInWith(username, password);
+    }
+    
     // käyttäjän luonti
     @Given("^command new user is selected$")
     public void createNewUserIsSelected() {
-    	driver.get(baseUrl);
-        WebElement element = driver.findElement(By.linkText("register new user"));       
-        element.click(); 
+    	goToCreateNewUserPage(); 
     }
     
     @When("a valid username {string} and password {string} and matching password confirmation are entered")
@@ -87,6 +90,24 @@ public class Stepdefs {
     	pageHasContent(error);
     }
     
+    // käyttäjän luonti ja sisäänkirjaus
+    @Given("user with username {string} with password {string} is successfully created")
+    public void newUserIsCreatedSuccessfullyAndThenLoggedOut(String username, String password) {
+    	goToCreateNewUserPage();
+    	createUserWith(username, password, password);
+    	logOutAfterUserCreation();
+    }
+    
+    @Given("user with username {string} and password {string} is tried to be created")
+    public void newUserIsTriedToCreate(String username, String password) {
+    	goToCreateNewUserPage();
+    	createUserWith(username, password, password);
+    	
+    	WebElement element = driver.findElement(By.linkText("back to home"));
+    	element.click();
+    }
+    
+    
     @After
     public void tearDown(){
         driver.quit();
@@ -108,6 +129,12 @@ public class Stepdefs {
         element.submit();  
     } 
     
+    private void goToCreateNewUserPage() {
+    	driver.get(baseUrl);
+        WebElement element = driver.findElement(By.linkText("register new user"));       
+        element.click(); 
+    }
+    
     private void createUserWith(String username, String password, String passwordConfirmation) {
     	assertTrue(driver.getPageSource().contains("Create username and give password"));
         WebElement element = driver.findElement(By.name("username"));
@@ -119,5 +146,15 @@ public class Stepdefs {
         
         element = driver.findElement(By.name("signup"));
         element.submit();
+    }
+    
+    private void logOutAfterUserCreation() {
+    	pageHasContent("Welcome to Ohtu Application!");
+    	WebElement element = driver.findElement(By.linkText("continue to application mainpage"));
+    	element.click();
+    	
+    	pageHasContent("Ohtu Application main page");
+    	element = driver.findElement(By.linkText("logout"));
+    	element.click();
     }
 }
