@@ -42,7 +42,12 @@ public class Stepdefs {
     public void userIsNotLoggedInAndErrorMessageIsGiven() {
         pageHasContent("invalid username or password");
         pageHasContent("Give your credentials to login");
-    }      
+    }
+    
+    @When("a valid nonexist username {string} and password {string} are given")
+    public void nonexistingValidUsernameAndPasswordAreGiven(String username, String password) {
+    	logInWith(username, password);
+    }
     
     @After
     public void tearDown(){
