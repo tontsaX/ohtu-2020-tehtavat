@@ -30,6 +30,10 @@ public class KauppaTest {
 	}
 	
 	@Test
+	public void varmistetaanEttaAloitaAsiointiNollaaOstokset() {
+	}
+	
+	@Test
     public void ostoksenPaaytyttyaTilisiirtoKutsutaanOikeillaArvoilla() {
         // tehdään ostokset
         kauppa.aloitaAsiointi();
@@ -75,6 +79,26 @@ public class KauppaTest {
         kauppa.tilimaksu("pekka", "12345");
 
         verify(pankki).tilisiirto("pekka", 42, "12345", "33333-44455", 5);
+	}
+	
+	@Test
+	public void KauppaPyytaaUudenViitenumeron() {
+		
+		when(viite.uusi()).
+        thenReturn(1).
+        thenReturn(2);
+		
+		kauppa.aloitaAsiointi();
+        kauppa.lisaaKoriin(1);
+        kauppa.tilimaksu("pekka", "12345");
+        
+        verify(pankki).tilisiirto("pekka", 1, "12345", "33333-44455", 5);
+
+        kauppa.aloitaAsiointi();
+        kauppa.lisaaKoriin(2);
+        kauppa.tilimaksu("pekka", "12345");
+
+        verify(pankki).tilisiirto("pekka", 1, "12345", "33333-44455", 5);
 	}
 	
 }

@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ohtu.verkkokauppa.KauppaTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2020-03-16T14:47:20" hostname="parrot" time="0.59">
+<testsuite name="ohtu.verkkokauppa.KauppaTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2020-03-16T15:28:30" hostname="parrot" time="0.581">
   <properties/>
-  <testcase name="ostetaanKaksiSamaaTuotettaJaLaskutetaanOikein" classname="ohtu.verkkokauppa.KauppaTest" time="0.579"/>
+  <testcase name="KauppaPyytaaUudenViitenumeron" classname="ohtu.verkkokauppa.KauppaTest" time="0.567"/>
+  <testcase name="ostetaanKaksiSamaaTuotettaJaLaskutetaanOikein" classname="ohtu.verkkokauppa.KauppaTest" time="0.003"/>
   <testcase name="ostostenPaatyttyaTilisiirtoKutsutaanOikeallaSummalla" classname="ohtu.verkkokauppa.KauppaTest" time="0.003"/>
   <testcase name="ostoksenPaaytyttyaTilisiirtoKutsutaanOikeillaArvoilla" classname="ohtu.verkkokauppa.KauppaTest" time="0.003"/>
-  <testcase name="ostetaanTuoteJotaOnVarastossaJaTuoteJotaEiOleVarastossa" classname="ohtu.verkkokauppa.KauppaTest" time="0.004"/>
+  <testcase name="ostetaanTuoteJotaOnVarastossaJaTuoteJotaEiOleVarastossa" classname="ohtu.verkkokauppa.KauppaTest" time="0.003"/>
+  <testcase name="varmistetaanEttaAloitaAsiointiNollaaOstokset" classname="ohtu.verkkokauppa.KauppaTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
