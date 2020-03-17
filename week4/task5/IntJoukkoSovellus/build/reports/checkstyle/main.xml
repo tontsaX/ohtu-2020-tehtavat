@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.17">
+<file name="/home/doka/Documents/Ohjelmistotuotanto/ohtu-2020-tehtavat/week4/task5/IntJoukkoSovellus/src/main/java/ohtu/intjoukkosovellus/IntJoukko.java">
+<error line="166" column="5" severity="warning" message="Cyclomatic Complexity is 4 (max allowed is 3)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+</file>
+<file name="/home/doka/Documents/Ohjelmistotuotanto/ohtu-2020-tehtavat/week4/task5/IntJoukkoSovellus/src/main/java/ohtu/intjoukkosovellus/Sovellus.java">
+<error line="15" column="5" severity="warning" message="Cyclomatic Complexity is 8 (max allowed is 3)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+<error line="15" column="5" severity="warning" message="Method length is 18 lines (max allowed is 15)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+<error line="93" column="5" severity="warning" message="Method length is 16 lines (max allowed is 15)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+<error line="110" column="5" severity="warning" message="Cyclomatic Complexity is 20 (max allowed is 3)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+<error line="110" column="5" severity="warning" message="Method length is 40 lines (max allowed is 15)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+</file>
+</checkstyle>
