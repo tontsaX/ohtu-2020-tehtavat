@@ -31,19 +31,17 @@ public class KauppaTest {
 	
 	@Test
 	public void varmistetaanEttaAloitaAsiointiNollaaOstokset() {
+		ostaMaitoaTyhjaanOstoskoriin(1);
+		verify(pankki).tilisiirto("pekka", 42, "12345", "33333-44455", 5);
+		
+		ostaMaitoaTyhjaanOstoskoriin(0);
+		verify(pankki).tilisiirto("pekka", 42, "12345", "33333-44455", 0);
 	}
 	
 	@Test
     public void ostoksenPaaytyttyaTilisiirtoKutsutaanOikeillaArvoilla() {
-        // tehdään ostokset
-        kauppa.aloitaAsiointi();
-        kauppa.lisaaKoriin(1);     // ostetaan tuotetta numero 1 eli maitoa
-        kauppa.tilimaksu("pekka", "12345");
-
-        // sitten suoritetaan varmistus, että pankin metodia tilisiirto on kutsuttu
-        // oikeilla parametreilla
-        // asiakas, viitegeneraattorin viitenro, as.tili, kaupan tili, summa
-        verify(pankki).tilisiirto("pekka", 42, "12345", "33333-44455", 5);   
+		ostaMaitoaTyhjaanOstoskoriin(1);
+		verify(pankki).tilisiirto("pekka", 42, "12345", "33333-44455", 5);
     }
 	
 	@Test
@@ -59,11 +57,7 @@ public class KauppaTest {
 	
 	@Test
 	public void ostetaanKaksiSamaaTuotettaJaLaskutetaanOikein() {
-		
-        kauppa.aloitaAsiointi();
-        kauppa.lisaaKoriin(1);     // ostetaan tuotetta numero 1 eli maitoa
-        kauppa.lisaaKoriin(1);
-        kauppa.tilimaksu("pekka", "12345");
+        ostaMaitoaTyhjaanOstoskoriin(2);
 
         verify(pankki).tilisiirto("pekka", 42, "12345", "33333-44455", 10);
 	}
@@ -74,7 +68,7 @@ public class KauppaTest {
         when(varasto.haeTuote(3)).thenReturn(new Tuote(3, "kama", 4));
         
         kauppa.aloitaAsiointi();
-        kauppa.lisaaKoriin(1);     // ostetaan tuotetta numero 1 eli maitoa
+        kauppa.lisaaKoriin(1);
         kauppa.lisaaKoriin(3);
         kauppa.tilimaksu("pekka", "12345");
 
@@ -83,14 +77,11 @@ public class KauppaTest {
 	
 	@Test
 	public void KauppaPyytaaUudenViitenumeron() {
-		
 		when(viite.uusi()).
         thenReturn(1).
         thenReturn(2);
 		
-		kauppa.aloitaAsiointi();
-        kauppa.lisaaKoriin(1);
-        kauppa.tilimaksu("pekka", "12345");
+		ostaMaitoaTyhjaanOstoskoriin(1);
         
         verify(pankki).tilisiirto("pekka", 1, "12345", "33333-44455", 5);
 
@@ -101,4 +92,24 @@ public class KauppaTest {
         verify(pankki).tilisiirto("pekka", 1, "12345", "33333-44455", 5);
 	}
 	
+	@Test
+	public void varmistaEttaPoistettuaTuotettaEiVeloiteta() {
+		kauppa.aloitaAsiointi();
+		kauppa.lisaaKoriin(1);
+		kauppa.lisaaKoriin(2);
+		kauppa.poistaKorista(2);
+		kauppa.tilimaksu("pekka", "12345");
+		
+		verify(pankki).tilisiirto("pekka", 42, "12345", "33333-44455", 5);
+	}
+	
+	private void ostaMaitoaTyhjaanOstoskoriin(int maara) {
+		kauppa.aloitaAsiointi();
+		
+		for(int i=0; i < maara; i++) {
+			kauppa.lisaaKoriin(1);
+		}
+        
+        kauppa.tilimaksu("pekka", "12345");
+	}
 }

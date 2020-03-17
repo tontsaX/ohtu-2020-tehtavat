@@ -23,13 +23,10 @@ public class Kauppa {
     public void aloitaAsiointi() {
         ostoskori = new Ostoskori();
     }
-    
-    public Ostoskori getOstoskori() {
-    	return this.ostoskori;
-    }
 
     public void poistaKorista(int id) {
         Tuote t = varasto.haeTuote(id); 
+        ostoskori.poista(t);
         varasto.palautaVarastoon(t);
     }
 
