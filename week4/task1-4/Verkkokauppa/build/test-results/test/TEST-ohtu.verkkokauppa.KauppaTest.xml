@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ohtu.verkkokauppa.KauppaTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2020-03-17T11:14:12" hostname="parrot" time="1.388">
+<testsuite name="ohtu.verkkokauppa.KauppaTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2020-03-17T11:43:22" hostname="parrot" time="1.134">
   <properties/>
-  <testcase name="varmistaEttaPoistettuaTuotettaEiVeloiteta" classname="ohtu.verkkokauppa.KauppaTest" time="1.346"/>
-  <testcase name="KauppaPyytaaUudenViitenumeron" classname="ohtu.verkkokauppa.KauppaTest" time="0.008"/>
-  <testcase name="ostetaanKaksiSamaaTuotettaJaLaskutetaanOikein" classname="ohtu.verkkokauppa.KauppaTest" time="0.008"/>
-  <testcase name="ostostenPaatyttyaTilisiirtoKutsutaanOikeallaSummalla" classname="ohtu.verkkokauppa.KauppaTest" time="0.006"/>
-  <testcase name="ostoksenPaaytyttyaTilisiirtoKutsutaanOikeillaArvoilla" classname="ohtu.verkkokauppa.KauppaTest" time="0.005"/>
-  <testcase name="ostetaanTuoteJotaOnVarastossaJaTuoteJotaEiOleVarastossa" classname="ohtu.verkkokauppa.KauppaTest" time="0.006"/>
+  <testcase name="varmistaEttaPoistettuaTuotettaEiVeloiteta" classname="ohtu.verkkokauppa.KauppaTest" time="1.1"/>
+  <testcase name="KauppaPyytaaUudenViitenumeron" classname="ohtu.verkkokauppa.KauppaTest" time="0.007"/>
+  <testcase name="ostetaanKaksiSamaaTuotettaJaLaskutetaanOikein" classname="ohtu.verkkokauppa.KauppaTest" time="0.006"/>
+  <testcase name="ostostenPaatyttyaTilisiirtoKutsutaanOikeallaSummalla" classname="ohtu.verkkokauppa.KauppaTest" time="0.005"/>
+  <testcase name="ostoksenPaaytyttyaTilisiirtoKutsutaanOikeillaArvoilla" classname="ohtu.verkkokauppa.KauppaTest" time="0.004"/>
+  <testcase name="ostetaanTuoteJotaOnVarastossaJaTuoteJotaEiOleVarastossa" classname="ohtu.verkkokauppa.KauppaTest" time="0.005"/>
   <testcase name="varmistetaanEttaAloitaAsiointiNollaaOstokset" classname="ohtu.verkkokauppa.KauppaTest" time="0.005"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
