@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.17">
+<file name="/home/doka/Documents/Ohjelmistotuotanto/ohtu-2020-tehtavat/week4/task6/Tennis/src/main/java/ohtu/Main.java">
+</file>
+<file name="/home/doka/Documents/Ohjelmistotuotanto/ohtu-2020-tehtavat/week4/task6/Tennis/src/main/java/ohtu/TennisGame.java">
+<error line="71" column="5" severity="warning" message="Method length is 21 lines (max allowed is 20)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+</file>
+</checkstyle>
