@@ -5,7 +5,7 @@ import javafx.scene.control.TextField;
 
 public abstract class LaskuToimitus extends Komento {
 	
-	protected int arvo;
+	//protected int arvo;
 	//protected int tulos;
 
 	public LaskuToimitus(TextField tuloskentta, TextField syotekentta, Button plus, Button miinus, Button nollaa,
@@ -15,15 +15,17 @@ public abstract class LaskuToimitus extends Komento {
 	
 	@Override
 	public void suorita() {
+		int arvo = 0;
 		try {
-            this.arvo = Integer.parseInt(syotekentta.getText());
+            arvo = Integer.parseInt(syotekentta.getText());
         } catch (Exception e) {
         }
 		
-		tulos = laske();
+		int tulos = Komento.TULOS;
+		Komento.TULOS = laske(tulos, arvo);
 		syotekentta.setText("");
-        tuloskentta.setText("" + tulos);
+        tuloskentta.setText("" + Komento.TULOS);
 	}
 	
-	public abstract int laske();
+	public abstract int laske(int arvo1, int arvo2);
 }

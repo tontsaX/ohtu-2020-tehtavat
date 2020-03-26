@@ -16,9 +16,10 @@ public class Tapahtumankuuntelija implements EventHandler {
     private Button nollaa;
     private Button undo;
     */
-	private HashMap<Button, Komento> komennot;
+	private HashMap<Button, Komento> komennot = new HashMap<>();
 
     public Tapahtumankuuntelija(TextField tuloskentta, TextField syotekentta, Button ynnaa, Button vahenna, Button nollaa, Button undo) {
+    	undo.disableProperty().set(false);
     	komennot.put(ynnaa, new Summa(tuloskentta, syotekentta, ynnaa, vahenna, nollaa, undo));
     	komennot.put(vahenna, new Erotus(tuloskentta, syotekentta, ynnaa, vahenna, nollaa, undo));
     	komennot.put(nollaa, new Nollaa(tuloskentta, syotekentta, ynnaa, vahenna, nollaa, undo));
@@ -35,7 +36,8 @@ public class Tapahtumankuuntelija implements EventHandler {
         } catch (Exception e) {
         }
         */
-    	komennot.get(event.getTarget());
+    	komennot.get(event.getTarget()).suorita();
+    	
  
         // eka arvo annetaan ja se sijoitetaan Sovelluslogiikan tulos muuttujaan
     	/*

@@ -10,7 +10,7 @@ public class Summa extends LaskuToimitus {
 	}
 
 	@Override
-	public int laske() {
-		return tulos += arvo;
+	public int laske(int arvo1, int arvo2) {
+		return arvo1 + arvo2;
 	}
 }

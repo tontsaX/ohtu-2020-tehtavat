@@ -13,7 +13,7 @@ public abstract class Komento {
     protected Button nollaa;
     protected Button undo;
     
-    protected int tulos;
+    protected static int TULOS;
 
     public Komento(TextField tuloskentta, TextField syotekentta, Button plus, Button miinus, Button nollaa, Button undo) {
         this.tuloskentta = tuloskentta;

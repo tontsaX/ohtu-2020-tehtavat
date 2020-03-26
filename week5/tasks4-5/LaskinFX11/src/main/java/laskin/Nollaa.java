@@ -12,7 +12,7 @@ public class Nollaa extends Komento {
 
 	@Override
 	public void suorita() {
-		if (tulos == 0) {
+		if (Komento.TULOS == 0) {
             nollaa.disableProperty().set(true); 
         } else {
             nollaa.disableProperty().set(false);
