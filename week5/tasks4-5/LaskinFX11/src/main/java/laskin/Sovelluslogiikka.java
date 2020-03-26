@@ -1,14 +1,14 @@
 package laskin;
 
+import java.util.ArrayList;
+
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 public abstract class Sovelluslogiikka extends Komento {
-	
-	//protected int arvo;
-	//protected int tulos;
-	protected static int TULOS;
-	protected static int ARVO;
+
+	protected int tulos;
+	protected int arvo;
 
 	public Sovelluslogiikka(TextField tuloskentta, TextField syotekentta, Button nollaa, Button undo) {
 		super(tuloskentta, syotekentta, nollaa, undo);
@@ -18,14 +18,14 @@ public abstract class Sovelluslogiikka extends Komento {
 	public void suorita() {
 		
 		try {
-            ARVO = Integer.parseInt(syotekentta.getText());
+            arvo = Integer.parseInt(syotekentta.getText());
         } catch (Exception e) {
         }
 		
 		syotekentta.setText("");
         tuloskentta.setText("" + laske());
 
-        if(TULOS == 0) {
+        if(tulos == 0) {
         	nollaa.disableProperty().set(true);
         } else {
         	nollaa.disableProperty().set(false);

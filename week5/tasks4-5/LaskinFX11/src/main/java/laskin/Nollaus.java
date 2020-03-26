@@ -11,7 +11,7 @@ public class Nollaus extends Sovelluslogiikka {
 	
 	@Override
 	public int laske() {
-		return TULOS = 0;
+		return tulos = 0;
 	}
 
 }

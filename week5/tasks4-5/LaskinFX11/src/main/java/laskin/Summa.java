@@ -11,6 +11,6 @@ public class Summa extends Sovelluslogiikka {
 
 	@Override
 	public int laske() {
-		return TULOS += ARVO;
+		return tulos += arvo;
 	}
 }
