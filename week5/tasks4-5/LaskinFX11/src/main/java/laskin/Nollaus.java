@@ -14,6 +14,7 @@ public class Nollaus extends Komento {
 		TULOS = 0;
 		syotekentta.setText("");
 		tuloskentta.setText("" + TULOS);
+		nollaa.disableProperty().set(true);
 	}
 
 }
