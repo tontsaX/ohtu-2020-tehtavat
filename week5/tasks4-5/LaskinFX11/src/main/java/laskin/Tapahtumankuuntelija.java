@@ -20,6 +20,7 @@ public class Tapahtumankuuntelija implements EventHandler {
 
     public Tapahtumankuuntelija(TextField tuloskentta, TextField syotekentta, Button ynnaa, Button vahenna, Button nollaa, Button undo) {
     	undo.disableProperty().set(false);
+    	//nollaa.disableProperty().set(false);
     	komennot.put(ynnaa, new Summa(tuloskentta, syotekentta, ynnaa, vahenna, nollaa, undo));
     	komennot.put(vahenna, new Erotus(tuloskentta, syotekentta, ynnaa, vahenna, nollaa, undo));
     	komennot.put(nollaa, new Nollaa(tuloskentta, syotekentta, ynnaa, vahenna, nollaa, undo));
