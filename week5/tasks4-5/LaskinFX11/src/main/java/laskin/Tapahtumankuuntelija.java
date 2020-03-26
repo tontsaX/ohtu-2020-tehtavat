@@ -21,7 +21,6 @@ public class Tapahtumankuuntelija implements EventHandler {
     
     @Override
     public void handle(Event event) {
-    	
         komennot.get(event.getTarget()).suorita();
     }
 
