@@ -16,22 +16,31 @@ public abstract class Sovelluslogiikka extends Komento {
 	
 	@Override
 	public void suorita() {
-		
+		//undo.disableProperty().set(false);
 		try {
             arvo = Integer.parseInt(syotekentta.getText());
         } catch (Exception e) {
         }
 		
+		toimita();
 		syotekentta.setText("");
-        tuloskentta.setText("" + laske());
+        tuloskentta.setText("" + tulos);
 
-        if(tulos == 0) {
+        tarkistaNollaus();
+        
+	}
+	
+	public abstract void toimita();
+	
+	private void tarkistaNollaus() {
+		if(tulos == 0) {
         	nollaa.disableProperty().set(true);
         } else {
         	nollaa.disableProperty().set(false);
         }
-        
 	}
-	
-	public abstract int laske();
+
+	private void tarkistaUndo() {
+		
+	}
 }

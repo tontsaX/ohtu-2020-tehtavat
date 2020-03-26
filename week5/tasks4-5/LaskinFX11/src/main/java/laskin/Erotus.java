@@ -3,7 +3,7 @@ package laskin;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-public class Erotus extends Sovelluslogiikka {
+public class Erotus extends Laskenta {
 
 	public Erotus(TextField tuloskentta, TextField syotekentta,  Button nollaa, Button undo) {
 		super(tuloskentta, syotekentta, nollaa, undo);
@@ -11,7 +11,7 @@ public class Erotus extends Sovelluslogiikka {
 
 	@Override
 	public int laske() {
-		return tulos -= arvo;
+		return tulos - arvo;
 	}
 
 }

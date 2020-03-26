@@ -10,8 +10,8 @@ public class Nollaus extends Sovelluslogiikka {
 	}
 	
 	@Override
-	public int laske() {
-		return tulos = 0;
+	public void toimita() {
+		tulos = 0;
 	}
 
 }
