@@ -3,13 +3,14 @@ package laskin;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-public abstract class LaskuToimitus extends Komento {
+public abstract class Sovelluslogiikka extends Komento {
 	
 	//protected int arvo;
 	//protected int tulos;
+	protected static int TULOS;
 	protected static int ARVO;
 
-	public LaskuToimitus(TextField tuloskentta, TextField syotekentta, Button nollaa, Button undo) {
+	public Sovelluslogiikka(TextField tuloskentta, TextField syotekentta, Button nollaa, Button undo) {
 		super(tuloskentta, syotekentta, nollaa, undo);
 	}
 	
@@ -24,11 +25,13 @@ public abstract class LaskuToimitus extends Komento {
 		syotekentta.setText("");
         tuloskentta.setText("" + laske());
         
+        
         if(TULOS == 0) {
         	nollaa.disableProperty().set(true);
         } else {
         	nollaa.disableProperty().set(false);
         }
+        
 	}
 	
 	public abstract int laske();

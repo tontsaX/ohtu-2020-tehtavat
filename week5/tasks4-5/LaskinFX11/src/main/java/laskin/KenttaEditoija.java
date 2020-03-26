@@ -1,8 +1,8 @@
 package laskin;
 
-public class KenttaKomentaja {
+public class KenttaEditoija {
 
-	public KenttaKomentaja() {
+	public KenttaEditoija() {
 		// TODO Auto-generated constructor stub
 	}
 

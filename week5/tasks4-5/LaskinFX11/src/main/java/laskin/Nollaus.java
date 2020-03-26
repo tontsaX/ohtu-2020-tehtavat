@@ -3,7 +3,7 @@ package laskin;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-public class Nollaus extends Komento {
+public class Nollaus extends Sovelluslogiikka {
 
 	public Nollaus(TextField tuloskentta, TextField syotekentta, Button nollaa, Button undo) {
 		super(tuloskentta, syotekentta, nollaa, undo);
@@ -15,6 +15,11 @@ public class Nollaus extends Komento {
 		syotekentta.setText("");
 		tuloskentta.setText("" + TULOS);
 		nollaa.disableProperty().set(true);
+	}
+
+	@Override
+	public int laske() {
+		return 0;
 	}
 
 }
