@@ -13,10 +13,10 @@ public class Tapahtumankuuntelija implements EventHandler {
 
     public Tapahtumankuuntelija(TextField tuloskentta, TextField syotekentta, Button ynnaa, Button vahenna, Button nollaa, Button undo) {
     	undo.disableProperty().set(false);
-    	komennot.put(ynnaa, new Summa(tuloskentta, syotekentta, ynnaa, vahenna, nollaa, undo));
-    	komennot.put(vahenna, new Erotus(tuloskentta, syotekentta, ynnaa, vahenna, nollaa, undo));
-    	komennot.put(nollaa, new Nollaus(tuloskentta, syotekentta, ynnaa, vahenna, nollaa, undo));
-    	komennot.put(undo, new Undo(tuloskentta, syotekentta, ynnaa, vahenna, nollaa, undo));
+    	komennot.put(ynnaa, new Summa(tuloskentta, syotekentta, nollaa, undo));
+    	komennot.put(vahenna, new Erotus(tuloskentta, syotekentta, nollaa, undo));
+    	komennot.put(nollaa, new Nollaus(tuloskentta, syotekentta, nollaa, undo));
+    	komennot.put(undo, new Undo(tuloskentta, syotekentta, nollaa, undo));
     }
     
     @Override

@@ -9,20 +9,18 @@ public abstract class LaskuToimitus extends Komento {
 	//protected int tulos;
 	protected static int ARVO;
 
-	public LaskuToimitus(TextField tuloskentta, TextField syotekentta, Button plus, Button miinus, Button nollaa,
-			Button undo) {
-		super(tuloskentta, syotekentta, plus, miinus, nollaa, undo);
+	public LaskuToimitus(TextField tuloskentta, TextField syotekentta, Button nollaa, Button undo) {
+		super(tuloskentta, syotekentta, nollaa, undo);
 	}
 	
 	@Override
 	public void suorita() {
-		//int arvo = 0;
+		
 		try {
             ARVO = Integer.parseInt(syotekentta.getText());
         } catch (Exception e) {
         }
 		
-		//TULOS = laske(TULOS, arvo);
 		syotekentta.setText("");
         tuloskentta.setText("" + laske());
         

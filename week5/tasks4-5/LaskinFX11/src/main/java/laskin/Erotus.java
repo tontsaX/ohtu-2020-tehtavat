@@ -5,10 +5,8 @@ import javafx.scene.control.TextField;
 
 public class Erotus extends LaskuToimitus {
 
-	public Erotus(TextField tuloskentta, TextField syotekentta, Button plus, Button miinus, Button nollaa,
-			Button undo) {
-		
-		super(tuloskentta, syotekentta, plus, miinus, nollaa, undo);
+	public Erotus(TextField tuloskentta, TextField syotekentta,  Button nollaa, Button undo) {
+		super(tuloskentta, syotekentta, nollaa, undo);
 	}
 
 	@Override

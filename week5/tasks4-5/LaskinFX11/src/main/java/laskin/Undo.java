@@ -5,8 +5,8 @@ import javafx.scene.control.TextField;
 
 public class Undo extends Komento {
 
-	public Undo(TextField tuloskentta, TextField syotekentta, Button plus, Button miinus, Button nollaa, Button undo) {
-		super(tuloskentta, syotekentta, plus, miinus, nollaa, undo);
+	public Undo(TextField tuloskentta, TextField syotekentta, Button nollaa, Button undo) {
+		super(tuloskentta, syotekentta, nollaa, undo);
 	}
 
 	@Override
