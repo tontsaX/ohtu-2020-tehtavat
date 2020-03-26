@@ -24,8 +24,7 @@ public abstract class Sovelluslogiikka extends Komento {
 		
 		syotekentta.setText("");
         tuloskentta.setText("" + laske());
-        
-        
+
         if(TULOS == 0) {
         	nollaa.disableProperty().set(true);
         } else {
