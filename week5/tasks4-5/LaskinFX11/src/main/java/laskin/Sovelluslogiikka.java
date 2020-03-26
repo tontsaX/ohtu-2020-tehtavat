@@ -9,9 +9,12 @@ public abstract class Sovelluslogiikka extends Komento {
 
 	protected int tulos;
 	protected int arvo;
+	
+	protected static ArrayList<Integer> TULOKSET;
 
 	public Sovelluslogiikka(TextField tuloskentta, TextField syotekentta, Button nollaa, Button undo) {
 		super(tuloskentta, syotekentta, nollaa, undo);
+		TULOKSET = new ArrayList<>();
 	}
 	
 	@Override
