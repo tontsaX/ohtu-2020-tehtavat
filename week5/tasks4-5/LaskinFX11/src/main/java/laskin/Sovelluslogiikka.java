@@ -4,12 +4,12 @@ public class Sovelluslogiikka {
  
     private int tulos;
  
-    public void plus(int luku) {
-        tulos += luku;
+    public void plus(int arvo) {
+        tulos += arvo;
     }
      
-    public void miinus(int luku) {
-        tulos -= luku;
+    public void miinus(int arvo) {
+        tulos -= arvo;
     }
  
     public void nollaa() {
