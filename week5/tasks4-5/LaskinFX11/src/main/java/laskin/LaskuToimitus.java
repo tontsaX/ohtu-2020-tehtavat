@@ -25,6 +25,12 @@ public abstract class LaskuToimitus extends Komento {
 		//TULOS = laske(TULOS, arvo);
 		syotekentta.setText("");
         tuloskentta.setText("" + laske());
+        
+        if(TULOS == 0) {
+        	nollaa.disableProperty().set(true);
+        } else {
+        	nollaa.disableProperty().set(false);
+        }
 	}
 	
 	public abstract int laske();

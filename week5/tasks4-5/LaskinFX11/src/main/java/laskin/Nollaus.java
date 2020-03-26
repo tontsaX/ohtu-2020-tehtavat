@@ -12,6 +12,7 @@ public class Nollaus extends Komento {
 
 	@Override
 	public void suorita() {
+		/*
 		int arvo = 0;
 		
 		try {
@@ -24,6 +25,10 @@ public class Nollaus extends Komento {
         } else {
             nollaa.disableProperty().set(false);
         }
+        */
+		TULOS = 0;
+		syotekentta.setText("");
+		tuloskentta.setText("" + TULOS);
 	}
 
 }
