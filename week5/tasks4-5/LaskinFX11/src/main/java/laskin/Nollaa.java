@@ -12,7 +12,14 @@ public class Nollaa extends Komento {
 
 	@Override
 	public void suorita() {
-		if (Komento.TULOS == 0) {
+		int arvo = 0;
+		
+		try {
+            arvo = Integer.parseInt(tuloskentta.getText());
+        } catch (Exception e) {
+        }
+		
+		if (arvo == 0) {
             nollaa.disableProperty().set(true); 
         } else {
             nollaa.disableProperty().set(false);

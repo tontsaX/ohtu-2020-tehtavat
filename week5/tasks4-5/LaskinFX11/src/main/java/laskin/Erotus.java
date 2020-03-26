@@ -12,8 +12,8 @@ public class Erotus extends LaskuToimitus {
 	}
 
 	@Override
-	public int laske(int arvo1, int arvo2) {
-		return arvo1 - arvo2;
+	public int laske() {
+		return TULOS -= ARVO;
 	}
 
 }

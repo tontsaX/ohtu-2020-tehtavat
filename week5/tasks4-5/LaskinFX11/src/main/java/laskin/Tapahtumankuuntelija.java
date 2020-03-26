@@ -1,47 +1,38 @@
 package laskin;
 
-import java.util.HashMap;
-
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 public class Tapahtumankuuntelija implements EventHandler {
-	/*
     private TextField tuloskentta; 
     private TextField syotekentta; 
     private Button plus;
     private Button miinus;
     private Button nollaa;
     private Button undo;
-    */
-	private HashMap<Button, Komento> komennot = new HashMap<>();
+    private Sovelluslogiikka sovellus;
 
-    public Tapahtumankuuntelija(TextField tuloskentta, TextField syotekentta, Button ynnaa, Button vahenna, Button nollaa, Button undo) {
-    	undo.disableProperty().set(false);
-    	//nollaa.disableProperty().set(false);
-    	komennot.put(ynnaa, new Summa(tuloskentta, syotekentta, ynnaa, vahenna, nollaa, undo));
-    	komennot.put(vahenna, new Erotus(tuloskentta, syotekentta, ynnaa, vahenna, nollaa, undo));
-    	komennot.put(nollaa, new Nollaa(tuloskentta, syotekentta, ynnaa, vahenna, nollaa, undo));
-    	komennot.put(undo, new Undo(tuloskentta, syotekentta, ynnaa, vahenna, nollaa, undo));
+    public Tapahtumankuuntelija(TextField tuloskentta, TextField syotekentta, Button plus, Button miinus, Button nollaa, Button undo) {
+        this.tuloskentta = tuloskentta;
+        this.syotekentta = syotekentta;
+        this.plus = plus;
+        this.miinus = miinus;
+        this.nollaa = nollaa;
+        this.undo = undo;
+        this.sovellus = new Sovelluslogiikka();
     }
     
     @Override
     public void handle(Event event) {
-        //int arvo = 0;
+        int arvo = 0;
  
-        /*
-        try { // tulee komento-luokkiin
+        try {
             arvo = Integer.parseInt(syotekentta.getText());
         } catch (Exception e) {
         }
-        */
-    	komennot.get(event.getTarget()).suorita();
-    	
  
-        // eka arvo annetaan ja se sijoitetaan Sovelluslogiikan tulos muuttujaan
-    	/*
         if (event.getTarget() == plus) {
             sovellus.plus(arvo);
         } else if (event.getTarget() == miinus) {
@@ -51,26 +42,18 @@ public class Tapahtumankuuntelija implements EventHandler {
         } else {
             System.out.println("undo pressed");
         }
-        */
         
-        // haetaan tulos Sovelluslogiikka-oliosta
-        /*
         int laskunTulos = sovellus.tulos();
         
         syotekentta.setText("");
         tuloskentta.setText("" + laskunTulos);
-        */
         
-        // laskun tulos on nolla, Z-nappi on harmaa
-    	/*
         if ( laskunTulos==0) {
-            nollaa.disableProperty().set(true); 
+            nollaa.disableProperty().set(true);
         } else {
             nollaa.disableProperty().set(false);
         }
-        */
-        
-        //undo.disableProperty().set(false); // undo-nappi on näyvillä, mutta sillä ei ole toiminnallisuutta
+        undo.disableProperty().set(false);
     }
 
 }
