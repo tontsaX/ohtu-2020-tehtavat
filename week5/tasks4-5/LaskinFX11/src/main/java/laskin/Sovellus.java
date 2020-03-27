@@ -5,35 +5,29 @@ import java.util.ArrayList;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-public abstract class Sovelluslogiikka extends Komento {
+public abstract class Sovellus extends Komento {
 
 	protected int tulos;
 	protected int arvo;
-	
-	protected static ArrayList<Integer> TULOKSET;
 
-	public Sovelluslogiikka(TextField tuloskentta, TextField syotekentta, Button nollaa, Button undo) {
-		super(tuloskentta, syotekentta, nollaa, undo);
-		TULOKSET = new ArrayList<>();
+	public Sovellus(TextField tuloskentta, TextField syotekentta, Button nollaa, Button undo, Muisti muisti) {
+		super(tuloskentta, syotekentta, nollaa, undo, muisti);
 	}
 	
 	@Override
 	public void suorita() {
-		//undo.disableProperty().set(false);
-		try {
-            arvo = Integer.parseInt(syotekentta.getText());
-        } catch (Exception e) {
-        }
+		tarkistaUndo();
 		
-		toimita();
+		toimi();
+		tulos = muisti.getTulos();
+		
 		syotekentta.setText("");
         tuloskentta.setText("" + tulos);
 
         tarkistaNollaus();
-        
 	}
 	
-	public abstract void toimita();
+	public abstract void toimi();
 	
 	private void tarkistaNollaus() {
 		if(tulos == 0) {
@@ -44,6 +38,6 @@ public abstract class Sovelluslogiikka extends Komento {
 	}
 
 	private void tarkistaUndo() {
-		
+
 	}
 }

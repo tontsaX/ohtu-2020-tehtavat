@@ -1,17 +1,26 @@
 package laskin;
 
+import java.util.ArrayList;
+
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-public abstract class Laskenta extends Sovelluslogiikka {
+public abstract class Laskenta extends Sovellus {
 	
-	public Laskenta(TextField tuloskentta, TextField syotekentta, Button nollaa, Button undo) {
-		super(tuloskentta, syotekentta, nollaa, undo);
+	public Laskenta(TextField tuloskentta, TextField syotekentta, Button nollaa, Button undo, Muisti muisti) {
+		super(tuloskentta, syotekentta, nollaa, undo, muisti);
 	}
 
 	@Override
-	public void toimita() {
-		tulos = laske();
+	public void toimi() {
+		try {
+            arvo = Integer.parseInt(syotekentta.getText());
+        } catch (Exception e) {
+        }
+		
+		tulos = muisti.getTulos();
+		
+		muisti.addTulos(laske());
 	}
 	
 	public abstract int laske();
