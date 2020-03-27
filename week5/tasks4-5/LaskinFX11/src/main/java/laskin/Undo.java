@@ -13,11 +13,20 @@ public class Undo extends Sovellus {
 
 	@Override
 	public void toimi() {
-		
+		System.out.println("Undo pressed");
+		palaaEdelliseenTulokseen();
 	}
 	
 	private void palaaEdelliseenTulokseen() {
+		int index = muisti.getIndex();
+		ArrayList<Integer> tulokset = muisti.getTulokset();
 		
+		tulokset.remove(index);
+		
+		muisti.setTulokset(tulokset);
+		muisti.setIndex(--index);
+		
+		tulos = muisti.getTulos();
 	}
 
 }
