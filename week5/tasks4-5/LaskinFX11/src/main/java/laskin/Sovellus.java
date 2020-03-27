@@ -19,10 +19,12 @@ public abstract class Sovellus extends Komento {
 		tarkistaUndo();
 		
 		toimi();
-		tulos = muisti.getTulos();
+		//tulos = muisti.getTulos();
 		
 		syotekentta.setText("");
         tuloskentta.setText("" + tulos);
+        
+        System.out.println(muisti.toString());
 
         tarkistaNollaus();
 	}
@@ -38,6 +40,7 @@ public abstract class Sovellus extends Komento {
 	}
 
 	private void tarkistaUndo() {
-
+	
 	}
+	
 }

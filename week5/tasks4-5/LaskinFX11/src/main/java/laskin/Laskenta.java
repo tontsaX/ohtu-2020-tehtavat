@@ -21,6 +21,8 @@ public abstract class Laskenta extends Sovellus {
 		tulos = muisti.getTulos();
 		
 		muisti.addTulos(laske());
+		
+		arvo = 0;
 	}
 	
 	public abstract int laske();

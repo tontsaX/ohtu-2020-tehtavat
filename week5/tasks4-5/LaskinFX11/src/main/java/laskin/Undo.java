@@ -15,5 +15,9 @@ public class Undo extends Sovellus {
 	public void toimi() {
 		
 	}
+	
+	private void palaaEdelliseenTulokseen() {
+		
+	}
 
 }

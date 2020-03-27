@@ -33,5 +33,21 @@ public class Muisti {
 	public void setTulokset(ArrayList<Integer> tulokset) {
 		this.tulokset = tulokset;
 	}
-
+	
+	public int getIndex() {
+		return index;
+	}
+	
+	public void setIndex(int index) {
+		this.index = index;
+	}
+	
+	@Override
+	public String toString() {
+		String s = "";
+		for(int i: tulokset) {
+			s += i + " ";
+		}
+		return s;
+	}
 }
