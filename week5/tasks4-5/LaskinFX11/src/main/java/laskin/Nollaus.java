@@ -13,7 +13,6 @@ public class Nollaus extends Sovellus {
 	
 	@Override
 	public void toimi() {
-		//nollaaViimeisinTulos();
 		nollaaLaskin();
 	}
 	
@@ -23,13 +22,4 @@ public class Nollaus extends Sovellus {
 		muisti.setTulokset(tulokset);
 		muisti.setIndex(0);
 	}
-	
-	private void nollaaViimeisinTulos() {
-		ArrayList<Integer> tulokset = muisti.getTulokset();
-		int index = tulokset.size() -1;
-		tulokset.set(index, 0);
-		muisti.setTulokset(tulokset);
-		System.out.println(muisti.getTulos());
-	}
-
 }

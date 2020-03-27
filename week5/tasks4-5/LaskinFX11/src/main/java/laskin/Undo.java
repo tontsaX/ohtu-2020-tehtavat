@@ -13,7 +13,6 @@ public class Undo extends Sovellus {
 
 	@Override
 	public void toimi() {
-		System.out.println("Undo pressed");
 		palaaEdelliseenTulokseen();
 	}
 	

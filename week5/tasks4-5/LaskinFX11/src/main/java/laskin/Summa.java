@@ -1,7 +1,5 @@
 package laskin;
 
-import java.util.ArrayList;
-
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 

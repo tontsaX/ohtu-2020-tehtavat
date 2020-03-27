@@ -42,8 +42,7 @@ public class Muisti {
 		this.index = index;
 	}
 	
-	@Override
-	public String toString() {
+	public String historia() {
 		String s = "";
 		for(int i: tulokset) {
 			s += i + " ";

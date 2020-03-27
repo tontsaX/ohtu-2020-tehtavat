@@ -15,13 +15,11 @@ public abstract class Sovellus extends Komento {
 	public void suorita() {
 		
 		toimi();
-		//tulos = muisti.getTulos();
 		
 		syotekentta.setText("");
         tuloskentta.setText("" + tulos);
         
-        System.out.println(muisti.toString());
-        System.out.println(muisti.getIndex());
+        System.out.println(muisti.historia());
         
         asetaNollausJaUndo();
         
