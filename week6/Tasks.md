@@ -1,4 +1,6 @@
-1. Write classes, that implement Matcher interface as following operations 
+1. Task 1 is not meant to be returned.
+
+2. Add classes, that implement Matcher interface with operation names as 
 All(true for all players), Not(negation of the parameter),HasFewerThan(inverse of the 
 HasAtLeast method). Use classes And, HasAtLeast and PlaysIn as examples.
 
@@ -16,3 +18,10 @@ Matcher m = new And(
 );
 
 need to print the same output.
+
+3. Add Or Mathcer implementation.
+
+4. Learn from the material about builder classes andd Make a builder class called 
+QueryBuilder. Get rid of writing new Operation every time.
+
+5. Add oneOf(Matcher...) method to the Builder class to use Or operation.
