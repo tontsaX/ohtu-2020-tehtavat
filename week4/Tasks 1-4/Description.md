@@ -16,3 +16,8 @@ The task was to write more tests for the program.
 
 Task 4 continues the task 3 and is about more testing the Verkkokauppa project
 using Mockito.
+
+Original programs in the course repository:
+  [MockitoDemo](https://github.com/ohjelmistotuotanto-hy/syksy2019/tree/master/koodi/viikko4/MockitoDemo)
+  [MaksukorttiMockito](https://github.com/ohjelmistotuotanto-hy/syksy2019/tree/master/koodi/viikko4/MaksukorttiMockito)
+  [Verkkokauppa](https://github.com/ohjelmistotuotanto-hy/syksy2019/tree/master/koodi/viikko4/Verkkokauppa)

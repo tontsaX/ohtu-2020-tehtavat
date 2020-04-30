@@ -8,3 +8,5 @@ In task 2 students were to clean programs printing.
 
 Task 3 was about using gradle shadow plugin to create a working jar file with
 added dependencies.
+
+[Original program](https://github.com/ohjelmistotuotanto-hy/syksy2019/tree/master/koodi/viikko3/nhlreader) in the course repository.
