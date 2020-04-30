@@ -7,6 +7,8 @@ public abstract class KiviPaperiSakset implements Pelattava {
 	protected Tuomari tuomari;
 	protected String pelaaja;
 	
+	protected String ekanSiirto, tokanSiirto;
+	
 	protected KiviPaperiSakset(IO io) {
 		konsoli = io;
 		tuomari = new Tuomari();
@@ -28,9 +30,25 @@ public abstract class KiviPaperiSakset implements Pelattava {
 		return peli;
 	}
 	
+	@Override
 	public void pelaa() {
-		
+		kaynnissa = true;
+    	
+    	while(kaynnissa) {
+    		tulostaOhjeet();
+    		
+	        konsoli.print("Ensimmäisen pelaajan siirto: ");
+	        ekanSiirto = konsoli.nextLine();
+	        
+	        toisenPelaajanSiirto();
+	        
+	        tarkistaTaiKirjaaSiirrot();
+
+	        tulostaPistetilanne();
+    	}
 	};
+	
+	protected abstract void toisenPelaajanSiirto();
 	
 	protected void tulostaOhjeet() {
 		konsoli.println("peli loppuu kun pelaaja antaa virheellisen siirron eli jonkun muun kuin k, p tai s");
@@ -46,5 +64,12 @@ public abstract class KiviPaperiSakset implements Pelattava {
         return "k".equals(siirto) || "p".equals(siirto) || "s".equals(siirto);
     }
 	
+	protected void tarkistaTaiKirjaaSiirrot() {
+		if(!onkoOkSiirto(ekanSiirto) || !onkoOkSiirto(tokanSiirto)) {
+        	kaynnissa = false;
+        } else {
+        	tuomari.kirjaaSiirto(ekanSiirto, tokanSiirto);
+        }
+	}
 
 }

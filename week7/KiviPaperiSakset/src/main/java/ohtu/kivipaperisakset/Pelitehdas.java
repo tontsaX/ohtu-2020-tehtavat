@@ -7,7 +7,7 @@ public class Pelitehdas {
 	}
 	
 	public static KiviPaperiSakset yksinpeliHelppo(IO io) {
-		return new KPSTekoaly(io);
+		return new KPSHelppo(io);
 	}
 	
 	public static KiviPaperiSakset yksinpeliVaikea(IO io) {
