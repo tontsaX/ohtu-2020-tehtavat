@@ -2,11 +2,10 @@ package ohtu.kivipaperisakset;
 
 public abstract class KiviPaperiSakset implements Pelattava {
 	
-	protected boolean kaynnissa;
 	protected IO konsoli;
 	protected Tuomari tuomari;
-	protected String pelaaja;
 	
+	protected boolean kaynnissa;
 	protected String ekanSiirto, tokanSiirto;
 	
 	protected KiviPaperiSakset(IO io) {
@@ -37,18 +36,22 @@ public abstract class KiviPaperiSakset implements Pelattava {
     	while(kaynnissa) {
     		tulostaOhjeet();
     		
-	        konsoli.print("Ensimmäisen pelaajan siirto: ");
-	        ekanSiirto = konsoli.nextLine();
+	        ensimmainenSiirto();
 	        
-	        toisenPelaajanSiirto();
+	        toinenSiirto();
 	        
-	        tarkistaTaiKirjaaSiirrot();
+	        tarkistaJaKirjaaSiirrot();
 
 	        tulostaPistetilanne();
     	}
 	};
 	
-	protected abstract void toisenPelaajanSiirto();
+	protected abstract void toinenSiirto();
+	
+	protected void ensimmainenSiirto() {
+		konsoli.print("Ensimmäisen pelaajan siirto: ");
+        ekanSiirto = konsoli.nextLine();
+	}
 	
 	protected void tulostaOhjeet() {
 		konsoli.println("peli loppuu kun pelaaja antaa virheellisen siirron eli jonkun muun kuin k, p tai s");
@@ -64,7 +67,7 @@ public abstract class KiviPaperiSakset implements Pelattava {
         return "k".equals(siirto) || "p".equals(siirto) || "s".equals(siirto);
     }
 	
-	protected void tarkistaTaiKirjaaSiirrot() {
+	protected void tarkistaJaKirjaaSiirrot() {
 		if(!onkoOkSiirto(ekanSiirto) || !onkoOkSiirto(tokanSiirto)) {
         	kaynnissa = false;
         } else {

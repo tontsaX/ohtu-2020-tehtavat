@@ -12,7 +12,7 @@ public class Paaohjelma {
                 + "\nmuilla valinnoilla peli lopetetaan"
                 + "\nSyötä valinta: ");
     	
-    	Pelattava kpsPeli = KiviPaperiSakset.uusiPeli(konsoli.nextLine(), konsoli);
+    	KiviPaperiSakset kpsPeli = KiviPaperiSakset.uusiPeli(konsoli.nextLine(), konsoli);
     	
     	if(kpsPeli != null) {
     		kpsPeli.pelaa();

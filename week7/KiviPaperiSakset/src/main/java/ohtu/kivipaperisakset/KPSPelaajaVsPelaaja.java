@@ -7,7 +7,7 @@ public class KPSPelaajaVsPelaaja extends KiviPaperiSakset {
 	}
 
 	@Override
-	protected void toisenPelaajanSiirto() {
+	protected void toinenSiirto() {
 		konsoli.print("Toisen pelaajan siirto: ");
 		tokanSiirto = konsoli.nextLine();
 	}

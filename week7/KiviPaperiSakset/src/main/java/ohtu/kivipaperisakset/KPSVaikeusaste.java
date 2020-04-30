@@ -9,7 +9,7 @@ public class KPSVaikeusaste extends KiviPaperiSakset {
 	}
 
 	@Override
-	protected void toisenPelaajanSiirto() {
+	protected void toinenSiirto() {
 		tokanSiirto = tekoaly.annaSiirto();
         konsoli.println("Tietokone valitsi: " + tokanSiirto);
 	}
